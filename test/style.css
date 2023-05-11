@@ -1,0 +1,13 @@
+#area-chart,
+#line-chart,
+#bar-chart,
+#stacked,
+#pie-chart{
+  min-height: 250px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Grafiek</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'>
+  <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <h3 class="text-primary text-center">
+    Temperatuur op {{datum_url}}
+  </h3>
+    <div class="text-center center">
+      <button onclick="document.location='/dash/{{gisteren}}/{{kamer}}'"><</button>
+      <select name="n_kamer" required>
+        {% for x in kamerS %}
+          {% if kamer == kamerS[loop.index-1][0] %}
+            <li><option selected value="{{kamerS[loop.index-1][0]}}">{{kamerS[loop.index-1][0]}}</option></li>
+          {% else %}
+            <li><option value="{{kamerS[loop.index-1][0]}}" onclick="document.location='/dash/{{datum_url}}/{{kamerS[loop.index-1][0]}}'">{{kamerS[loop.index-1][0]}}</option></li>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <button onclick="document.location='/dash/{{morgen}}/{{kamer}}'">></button>
+      <div id="line-chart"></div>
+    </div>    
+
+</body>
+<!-- partial -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script>
+<script src="/static/jss/script.js"></script>
+
+</body>
+</html>
