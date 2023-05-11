@@ -3,10 +3,11 @@ from flask_login import UserMixin
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String(150))
+    lastname = db.Column(db.String(150))
     email = db.Column(db.String(150), unique=True)
-    name = db.Column(db.String(150))
     password = db.Column(db.String(150))
-    feedback = db.Column(db.Integer, db.CheckConstraint('feedback > 0 AND feedback < 5')) # weet niet of dit werkt?
+    #Relaties
     data = db.relationship('Data')
 
 class Data(db.Model):
