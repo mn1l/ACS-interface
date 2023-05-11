@@ -1,0 +1,58 @@
+@font-face {
+    font-family: Nunito;
+    src: url(../font/Nunito-Regular.ttf);
+    src: url(../font/Nunito-Regular.ttf) format('ttf'), url(../font/Nunito-Regular.ttf) format('truetype')
+  }
+
+html {
+    background-color: #13855c;
+    position: relative;
+    min-height: 100%;
+    font-family: Nunito
+  }
+
+.container{
+    width: 32rem;
+    background-color: rgb(19, 67, 115);
+    border-radius: .5rem;
+    box-shadow: 0 0 2rem rgba(0,0,0,.3);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.wrapper{
+    margin: 2rem 0;
+    margin-bottom: .5rem;
+    font-size: 1.5em;
+    color: #fdfdfd;
+    text-align: center;
+}
+
+.text{
+    margin-bottom: 2.5rem;
+    font-size: 2em;
+    color: #fdfdfd;
+    text-align: center;
+}
+
+.emoji{
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.emoji > div:not(:first-child){
+    margin-left: 1rem;
+
+}
+
+.emoji > div{
+    cursor: pointer;
+    transition: transform .2s ease-in;
+    
+}
+
+.emoji > div:hover{
+    transform: scale(1.4);
+}
