@@ -198,7 +198,7 @@
 					<div class="elementor-cta__bg-overlay"></div>
 				</div>
 								<div class="elementor-cta__content">
-			<h1 class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--grow">Hoe ervaar je de temperatuur in deze kamer?</h1>
+			<h1 class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--grow">Hoe ervaar je de temperatuur in deze kamer?</h1></br>
                 <div class="elementor-cta__description elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
 					<div class="mx-0 mx-sm-auto">
 						<div class="text-center">
@@ -206,24 +206,43 @@
 						<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
 							<div class="btn-group me-2" role="group" aria-label="First group">
 								<div class="container">
-									<div class="slider">
-										<input type="range" min="-100" max="0" value="0" class="range blue" step="25"/>
-										<datalist id="values">
-											<option value="0" ></option>
-											<option value="25" ></option>
-											<option value="50" ></option>
-											<option value="75" ></option>
-											<option value="100" ></option>
-										  </datalist>
+									<div class="feedback">
+										<form action="#">
+											<label for="fname"></label>
+											<input type="text" id="fname" name="firstname" placeholder="Uw voornaam..">
+										
+											<label for="lname"></label>
+											<input type="text" id="lname" name="lastname" placeholder="Uw achternaam..">
+
+											<label for="temperatuur"></label>
+											<select id="temp" name="temp">
+												<option value="0">Kies uw temperatuur..</option>
+												<option value="te koud">Te koud</option>
+												<option value="koud">Beetje koud</option>
+												<option value="goed">Goed</option>
+												<option value="warm">Beetje warm</option>
+												<option value="te warm">Te warm</option>
+											</select>
+										
+											<label for="subject"></label>
+											<textarea id="subject" name="subject" placeholder="Toelichting als nodig.." style="height:200px"></textarea><br><br>
+									    	<input type="submit" value="Submit">
+  										</form>
 									</div>
 						  		</div>
 								<br><br><br><br>
 							</div>
-							<div class="elementor-cta__button-wrapper elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
-								<a class="elementor-cta__button elementor-button elementor-size-sm" href="/index">Versturen</a>
+						</div>
+						<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+							<div class="btn-group me-2" role="group" aria-label="First group">
+							<div class="container">
+								<p class="elementor-cta__description elementor-cta__content-item elementor-content-item elementor-animated-item--grow">Stuur je feedback en ga terug naar Dashboard. Alvast Bedankt!</p>
+								
+								<div class="elementor-cta__button-wrapper elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
+									<a class="elementor-cta__button elementor-button elementor-size-sm" href="/index">Ga terug naar Dashboard</a>
+								</div>
 							</div>
-							<p class="elementor-cta__description elementor-cta__content-item elementor-content-item elementor-animated-item--grow">Stuur je feedback en ga terug naar Dashboard. Alvast Bedankt!</p>
-                    	</div>
+						</div>
                 	</div>
 				</div>
 			</div>

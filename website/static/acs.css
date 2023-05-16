@@ -1124,88 +1124,34 @@ background-color: #477585
 color: #6e707e
 }
 
-.slider {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-width: 600px;
-height: 40px;
-padding: 20px;
-padding-left: 200px;
-background: linear-gradient(to right, rgb(0, 136, 255), rgb(37, 199, 37), rgb(211, 44, 44));
-border-radius: 20px;
-display: flex;
-align-items: center;
-box-shadow: 0px 15px 40px #bfbebe;
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
-.slider label {
-font-size: 24px;
-font-weight: 600;
-font-family: Open Sans;
-padding-left: 10px;
-color: black;
-}
-.slider input[type="range"] {
-width: 550px;
-height: 4px;
-background: black;
-border: none;
-outline: none;
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type="range"] {
-  appearance: slider-vertical;
+input[type=submit]:hover {
+  background-color: #45a049;
 }
 
-datalist {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    writing-mode: vertical-lr;
-    width: 500px;
-}
-  
-option {
-padding: 0;
-}
-
-input[type="range"] {
-width: 500px;
-margin: 0;
-}
-
-.range {
--webkit-appearance: none;
--moz-appearance: none;
-position: absolute;
-left: 50%;
-top: 50%;
-width: 300px;
-margin-top: 10px;
-transform: translate(-50%, -50%);
-}
-input[type=range]::-webkit-slider-runnable-track {
--webkit-appearance: none;
-background: black;
-height: 5px;
-}
-input[type=range]:focus {
-outline: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
--webkit-appearance: none;
-border: 2px solid;
-border-radius: 50%;
-height: 25px;
-width: 25px;
-max-width: 80px;
-position: relative;
-bottom: 11px;
-background-color: #1d1c25;
-cursor: -webkit-grab;
--webkit-transition: border 1000ms ease;
-transition: border 1000ms ease;
+.feedback {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 6px;
+  background-color: transparent;
+  padding: 20px;
 }
