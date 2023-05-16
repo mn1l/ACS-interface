@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://images-ext-1.discordapp.net/external/SoGMoS3uwidZDLRDhin5PICTr56RyIfZWcNwzEBiV3M/https/acs-buildings.com/wp-content/uploads/2019/08/cropped-site_icon-180x180.png?width=360&height=360" rel="icon">
-  <title>ACS - Dashboard</title>
+  <title>{% block title %}ACS - Dashboard{% endblock %}</title>
   <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../static/acs.css" rel="stylesheet">
@@ -92,7 +92,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="../static/img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small"  </span> {{user.firstname}}
+                <span class="ml-2 d-none d-lg-inline text-white small">  </span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -109,91 +109,8 @@
             </li>
           </ul>
         </nav>
-        <!-- Container Fluid-->
-        <div class="container-fluid" id="container-wrapper">
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-          </div>
-          <!-- Rij maken van temperaturen -->
-          <div class="row mb-3">
-            <!-- Luchttemp -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Lucht Temperatuur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">23 graden celsius</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Oppervlakte temp -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Gemiddelde oppervlakte temperatuur</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">21 graden celsius</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                      </div>
-                    </div>
-                    <div class="col-auto">
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Gevoelstemp -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Gevoelstemperatuur</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">22 graden celsius</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-
-                      </div>
-                    </div>
-                    <div class="col-auto">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
- 
-            <!-- Grafiek --> <!-- Geen idee hoe ik waardes aanpas en meerdere lijnen toevoeg -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Temperaturen over de dag</h6>
-                  <div class="dropdown no-arrow">
-
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                      aria-labelledby="dropdownMenuLink">
-     
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-
-          
+        <div class="container">{% block content %} {% endblock %}</div> 
 
           <!-- Logout, gaat naar login -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -201,13 +118,13 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Melding!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Wil je uitloggen?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>

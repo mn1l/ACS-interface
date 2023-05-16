@@ -11,7 +11,7 @@ def home():
 @views.route('/index')
 @login_required
 def index():
-    return render_template('index.html', user=current_user)
+    return render_template('dashboard.html', user=current_user)
 
 @views.route('/feedback')
 def feedback():

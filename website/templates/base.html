@@ -2,46 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://images-ext-1.discordapp.net/external/SoGMoS3uwidZDLRDhin5PICTr56RyIfZWcNwzEBiV3M/https/acs-buildings.com/wp-content/uploads/2019/08/cropped-site_icon-180x180.png?width=360&height=360" rel="icon">
-    <title>{% block title %}ACS{% endblock %}</title>
-    <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../static/acs.css" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-    crossorigin="anonymous"
-    />
-    <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    crossorigin="anonymous"
-    />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://images-ext-1.discordapp.net/external/SoGMoS3uwidZDLRDhin5PICTr56RyIfZWcNwzEBiV3M/https/acs-buildings.com/wp-content/uploads/2019/08/cropped-site_icon-180x180.png?width=360&height=360" rel="icon">
+  <title>{% block title %}ACS{% endblock %}</title>
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/acs.css" rel="stylesheet">
 </head>
 
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link" id="home" href="/">Home</a>
-            <a class="nav-item nav-link" id="login" href="/login">Login</a>
-            <a class="nav-item nav-link" id="signUp" href="/sign_up">Sign Up</a>
-            </div>
+<body id="page-top">
+  <div id="wrapper">
+    <!-- Sidebar, probeerde acs logo erbij te krijgen-->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
+        <div class="sidebar-brand-icon">
+          <img src="https://acs-buildings.com/wp-content/uploads/2019/08/cropped-site_icon-32x32.png">
         </div>
-    </nav>
+        <div class="sidebar-brand-text mx-3"></div>
+      </a>
+
+      <!-- Dashboard knop onder logo, linkt naar index_ACS.html -->
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>ASC - Home</span></a>
+      </li>
+
+      <!-- Features -->
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">       
+        Features
+      </div>
+
+      <!-- Bootstrap UI, kan veranderd worden naar geschiedenis, dit kan linken naar verschillende paginas-->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/login">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Sign in</span>
+        </a>
+      </li>      
+      
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/sign_up">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Sign up</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="https://acs-buildings.com/producten/">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Meer Informatie</span>
+        </a>
+      </li>
+
+
+      <!--Tables, kan contact worden-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Contact</span>
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Contact</h6>
+            <a class="collapse-item" href="https://goo.gl/maps/yAqNNAe7SthBPvEb8">
+              <i class="c-icon fa fa-map-marker"></i>
+              Sylviuslaan 5
+            </a>
+            <a class="collapse-item" href="mailto:info@acs-buildings.com">
+              <i class="c-icon fa fa-envelope-o"></i>
+              info@acs-buildings.com
+            </a>
+            <a class="collapse-item" href="tel:( 31) 085 200 3989">
+              <i class="c-icon fa fa-phone"></i>
+              (31) 085 200 3989
+            </a>
+
+          </div>
+        </div>
+      </li>
+      
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="../static/img/boy.png" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small">  </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://acs-buildings.com/">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Naar ASC site
+                </a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Login
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==
@@ -63,31 +146,40 @@
 
     <div class="container">{% block content %} {% endblock %}</div> 
 
+          <!-- Logout, gaat naar login -->
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Melding</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Heb je al een account?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                  <a href="/login" class="btn btn-primary">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    <script src="../static/vendor/jquery/jquery.min.js"></script>
-    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="../static/js/ruang-admin.min.js"></script>
-    <script src="../static/vendor/chart.js/Chart.min.js"></script>
-    <script src="../static/js/demo/chart-area-demo.js"></script>  
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"
-    ></script>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"
-    ></script>
-    <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-    ></script>
-
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../static/js/ruang-admin.min.js"></script>
+  <script src="../static/vendor/chart.js/Chart.min.js"></script>
+  <script src="../static/js/demo/chart-area-demo.js"></script> 
 </body>
 
 </html>
