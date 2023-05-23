@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User, Data
+from .models import User, Data, Feedback
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -59,3 +59,14 @@ def sign_up():
             return redirect(url_for('views.index'))
         
     return render_template("sign_up.html")
+
+@auth.route('/feedback', methods=["GET", "POST"])
+def feedback():
+
+    if request.method== 'POST':
+        feedback = request.form.get('temperatuur')
+
+        new_feedback = Feedback(feedback=feedback)
+        db.session.add(new_feedback)
+        db.session.commit()
+        flash('Feedback succesvol gegeven!', category='success')
