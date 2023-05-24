@@ -1,3 +1,7 @@
+{% extends 'index.html' %}<title>{% block title %}ASC - Feedback{% endblock %}</title>
+
+{% block content %}
+
 <!doctype html>
 <html lang="nl-NL">
 <head>
@@ -15,101 +19,7 @@
 
 <body id="page-top">
 	<div id="wrapper">
-		<!-- Sidebar, probeerde acs logo erbij te krijgen-->
-		<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-		  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
-			<div class="sidebar-brand-icon">
-			  <img src="https://acs-buildings.com/wp-content/uploads/2019/08/cropped-site_icon-32x32.png">
-			</div>
-			<div class="sidebar-brand-text mx-3"></div>
-		  </a>
-	
-		  <!-- Dashboard knop onder logo, linkt naar index_ACS.html -->
-		  <hr class="sidebar-divider my-0">
-		  <li class="nav-item active">
-			<a class="nav-link" href="/index">
-			  <i class="fas fa-fw fa-tachometer-alt"></i>
-			  <span>Dashboard</span></a>
-		  </li>
-	
-		  <!-- Features -->
-		  <hr class="sidebar-divider">
-		  <div class="sidebar-heading">       
-			Features
-		  </div>
-	
-		  <!-- Bootstrap UI, kan veranderd worden naar geschiedenis, dit kan linken naar verschillende paginas-->
-		  <li class="nav-item">
-			<a class="nav-link collapsed" href="/feedback">
-			  <i class="far fa-fw fa-window-maximize"></i>
-			  <span>Feedback</span>
-			</a>
-		  </li>
-	
-	
-		  <!--Tables, kan contact worden-->
-		  <li class="nav-item">
-			<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-			  aria-controls="collapseTable">
-			  <i class="fas fa-fw fa-table"></i>
-			  <span>Contact</span>
-			</a>
-			<div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-			  <div class="bg-white py-2 collapse-inner rounded">
-				<h6 class="collapse-header">Contact</h6>
-				<a class="collapse-item" href="https://goo.gl/maps/yAqNNAe7SthBPvEb8">
-				  <i class="c-icon fa fa-map-marker"></i>
-				  Sylviuslaan 5
-				</a>
-				<a class="collapse-item" href="mailto:info@acs-buildings.com">
-				  <i class="c-icon fa fa-envelope-o"></i>
-				  info@acs-buildings.com
-				</a>
-				<a class="collapse-item" href="tel:( 31) 085 200 3989">
-				  <i class="c-icon fa fa-phone"></i>
-				  (31) 085 200 3989
-				</a>
-	
-			  </div>
-			</div>
-		  </li>
-		  
-		  <hr class="sidebar-divider">
-		  <div class="sidebar-heading">
-	
-		</ul>
-		<!-- Sidebar -->
-		<div id="content-wrapper" class="d-flex flex-column">
-		  <div id="content">
-			<!-- TopBar -->
-			<nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
-			  <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-				<i class="fa fa-bars"></i>
-			  </button>
-			  <ul class="navbar-nav ml-auto">
-				
-				<div class="topbar-divider d-none d-sm-block"></div>
-				<li class="nav-item dropdown no-arrow">
-				  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-					aria-haspopup="true" aria-expanded="false">
-					<img class="img-profile rounded-circle" src="../static/img/boy.png" style="max-width: 60px">
-					<span class="ml-2 d-none d-lg-inline text-white small">  </span>
-				  </a>
-				  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-					<a class="dropdown-item" href="#">
-					  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-					  Profile
-					</a>
-	
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-					  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-					  Logout
-					</a>
-				  </div>
-				</li>
-			  </ul>
-			</nav>
+
 <div class="home page-template-default page page-id-4272 wp-custom-logo tribe-no-js content main-layout-content site-full-width menu_sidebar_slide_left no-cookie-bar elementor-default elementor-kit-763 elementor-page elementor-page-4272">
 	<div id="page" class="site box-shadow">
 	
@@ -207,23 +117,22 @@
 							<div class="btn-group me-2" role="group" aria-label="First group">
 								<div class="container">
 									<div class="feedback">
-										<form action="#">
-											<label for="te koud"></label>
-											<input id="te koud" type="button" name="temperatuur" value="te koud">
-											<label for="beetje koud"></label>
-											<input id="beetje koud" type="button" name= "temperatuur" value="beetje koud">
+										<form action="/feedback" method="POST">
+											<label for="te-koud"></label>
+											<input id="te-koud" type="submit" name="temperatuur" value="te koud">
+											<label for="beetje-koud"></label>
+											<input id="beetje-koud" type="submit" name="temperatuur" value="beetje koud">
 											<label for="goed"></label>
-											<input id="goed" type="button" name="temperatuur" value="goed">
-											<label for="beetje warm"></label>
-											<input id="beetje warm" type="button" name= "temperatuur" value="beetje warm">
-											<label for="te warm"></label>
-											<input id="te warm" type="button" name="temperatuur" value="te warm">
-  										</form>
+											<input id="goed" type="submit" name="temperatuur" value="goed">
+											<label for="beetje-warm"></label>
+											<input id="beetje-warm" type="submit" name="temperatuur" value="beetje warm">
+											<label for="te-warm"></label>
+											<input id="te-warm" type="submit" name="temperatuur" value="te warm">
+										</form>
 									</div>
-						  		</div>
-								<br><br>
+								</div>
 							</div>
-						</div>
+						</div><br><br>
 						<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
 							<div class="btn-group me-2" role="group" aria-label="First group">
 							<div class="container">
@@ -277,3 +186,5 @@
 
 </body>
 </html>
+
+{% endblock %}

@@ -23,4 +23,3 @@ class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     feedback = db.Column(db.String(20))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
