@@ -60,25 +60,31 @@ def sign_up():
         
     return render_template("sign_up.html")
 
-# @auth.route('/feedback', methods=["GET", "POST"])
-# def feedback():
+@auth.route('/feedback', methods=["GET", "POST"])
+def feedback():
 
-#     if request.method== 'POST':
-#         feedback = request.form.get('temperatuur')
-
-#         new_feedback = Feedback(feedback=feedback)
-#         db.session.add(new_feedback)
-#         db.session.commit()
-#         flash('Feedback succesvol gegeven!', category='success')
+    if request.method== 'POST':
+        feedback = request.form.get('temperatuur')
+        new_feedback = Feedback(feedback=feedback)
+        db.session.add(new_feedback)
+        db.session.commit()
+        flash('Feedback succesvol gegeven!', category='success')
+        return redirect(url_for('views.index'))
+    
+    return render_template("feedback.html")
+    
         
 #Versie chatgpt die ook niet werkt 
-@auth.route('/feedback', methods=['GET', 'POST'])
-def feedback():
+#@auth.route('/feedback', methods=['GET', 'POST'])
+#def feedback():
     if request.method == 'POST':
         feedback_value = request.form.get('temperatuur')  # Get the selected feedback value from the form
         feedback_entry = Feedback(feedback=feedback_value)  # Create a new Feedback object with the feedback value
         db.session.add(feedback_entry)  # Add the feedback entry to the database session
         db.session.commit()  # Commit the changes to the database
-        return 'Feedback submitted successfully!'  # You can customize the response message or redirect to another page
-    else:
-        return render_template('feedback.html')
+        flash('Feedback submitted successfully!', category='success')  # You can customize the response message or redirect to another page
+        return redirect(url_for('views.feedback'))
+    
+
+    return render_template('feedback.html')
+    

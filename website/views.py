@@ -12,3 +12,8 @@ def home():
 @login_required
 def index():
     return render_template('dashboard.html', user=current_user)
+
+@views.route('/feedback')
+@login_required
+def feedback():
+    return render_template('feedback.html', user=current_user)
