@@ -9,7 +9,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     #Relaties
     data = db.relationship('Data')
-    feedback = db.relationship('Feedback')
+    feedback = db.relationship('Feedback', backref='user', lazy='dynamic')
 
 class Data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
