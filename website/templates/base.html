@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +13,7 @@
 
 <body id="page-top">
   <div id="wrapper">
-    <!-- Sidebar, probeerde acs logo erbij te krijgen-->
+    <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
         <div class="sidebar-brand-icon">
@@ -23,12 +22,13 @@
         <div class="sidebar-brand-text mx-3"></div>
       </a>
 
-      <!-- Dashboard knop onder logo, linkt naar index_ACS.html -->
+      <!-- Dashboard -->
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
         <a class="nav-link" href="/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>ASC - Home</span></a>
+          <span>ASC - Home</span>
+        </a>
       </li>
 
       <!-- Features -->
@@ -37,8 +37,7 @@
         Features
       </div>
 
-      <!-- Bootstrap UI, kan veranderd worden naar geschiedenis, dit kan linken naar verschillende paginas-->
-      
+      <!-- Sign in -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="/login">
           <i class="far fa-fw fa-window-maximize"></i>
@@ -46,7 +45,7 @@
         </a>
       </li>      
       
-      
+      <!-- Sign up -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="/sign_up">
           <i class="far fa-fw fa-window-maximize"></i>
@@ -54,6 +53,7 @@
         </a>
       </li>
 
+      <!-- Meer Informatie -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="https://acs-buildings.com/producten/">
           <i class="far fa-fw fa-window-maximize"></i>
@@ -61,8 +61,7 @@
         </a>
       </li>
 
-
-      <!--Tables, kan contact worden-->
+      <!-- Contact -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
@@ -80,20 +79,19 @@
               <i class="c-icon fa fa-envelope-o"></i>
               info@acs-buildings.com
             </a>
-            <a class="collapse-item" href="tel:( 31) 085 200 3989">
+            <a class="collapse-item" href="tel:(31) 085 200 3989">
               <i class="c-icon fa fa-phone"></i>
               (31) 085 200 3989
             </a>
-
           </div>
         </div>
       </li>
       
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-
+      <div class="sidebar-heading"></div>
     </ul>
     <!-- Sidebar -->
+
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- TopBar -->
@@ -102,20 +100,18 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="../static/img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">  </span>
+                <span class="ml-2 d-none d-lg-inline text-white small"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="https://acs-buildings.com/">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Naar ASC site
                 </a>
-
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -126,60 +122,67 @@
           </ul>
         </nav>
 
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %} {% for category, message in messages %} {% if category ==
-    'error' %} 
-    <div class="alert alert-danger alter-dismissable fade show" role="alert">
-    {{ message }}
-    <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    {% else %}
-    <div class="alert alert-success alter-dismissable fade show" role="alert">
-    {{ message }}
-    <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    {% endif %} {% endfor %} {% endif %} {% endwith %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 
-    <div class="container">{% block content %} {% endblock %}</div> 
+        <div class="container">
+          {% block content %} {% endblock %}
+        </div>
 
-          <!-- Logout, gaat naar login -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Melding</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Heb je al een account?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="/login" class="btn btn-primary">Login</a>
-                </div>
+        <!-- Logout Modal -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelLogout">Melding</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Heb je al een account?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                <a href="/login" class="btn btn-primary">Login</a>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Scroll to top -->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
 
-  <!-- Scroll to top -->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <script src="../static/vendor/jquery/jquery.min.js"></script>
-  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="../static/js/ruang-admin.min.js"></script>
-  <script src="../static/vendor/chart.js/Chart.min.js"></script>
-  <script src="../static/js/demo/chart-area-demo.js"></script> 
+        <script src="../static/vendor/jquery/jquery.min.js"></script>
+        <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="../static/js/ruang-admin.min.js"></script>
+        <script src="../static/vendor/chart.js/Chart.min.js"></script>
+        <script src="../static/js/demo/chart-area-demo.js"></script>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
