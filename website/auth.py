@@ -65,7 +65,7 @@ def feedback():
 
     if request.method== 'POST':
         feedback = request.form.get('temperatuur')
-        new_feedback = Feedback(feedback=feedback)
+        new_feedback = Feedback(feedback=feedback, user_id=current_user.id)
         db.session.add(new_feedback)
         db.session.commit()
         flash('Feedback succesvol gegeven!', category='success')
