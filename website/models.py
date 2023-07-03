@@ -15,8 +15,8 @@ class Data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     luchttemp = db.Column(db.Integer)
     opptemp = db.Column(db.Integer)
-    # luchtdruk?
-    # luchtvochtigheid?
+    luchtdruk = db.Column(db.Integer)
+    luchtvochtigheid = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Feedback(db.Model):
