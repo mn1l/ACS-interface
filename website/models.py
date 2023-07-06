@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150))
     #Relaties
-    data = db.relationship('Data')
+    #data = db.relationship('Data')
     feedback = db.relationship('Feedback')
 
 class Data(db.Model):
@@ -17,7 +17,7 @@ class Data(db.Model):
     opptemp = db.Column(db.Float(4,2))
     luchtdruk = db.Column(db.Float(6,2))
     luchtvochtigheid = db.Column(db.Float(4,2))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    #user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
