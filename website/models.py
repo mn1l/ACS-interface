@@ -13,10 +13,10 @@ class User(db.Model, UserMixin):
 
 class Data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    luchttemp = db.Column(db.Integer)
-    opptemp = db.Column(db.Integer)
-    luchtdruk = db.Column(db.Integer)
-    luchtvochtigheid = db.Column(db.Integer)
+    luchttemp = db.Column(db.Float(4,2))
+    opptemp = db.Column(db.Float(4,2))
+    luchtdruk = db.Column(db.Float(6,2))
+    luchtvochtigheid = db.Column(db.Float(4,2))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class Feedback(db.Model):
